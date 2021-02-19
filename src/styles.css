@@ -1,1 +1,106 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+.puntero {
+    cursor: pointer;
+}
+
+html  {
+    height: auto;
+    background-color: #363636;
+ }
+
+
+/*
+body {
+    background-color: black;
+    color: white !important;
+}
+
+hr {
+    border-color: white;
+}
+
+
+.img-circle {
+    border-radius: 100%;
+    width: 150px;
+}
+
+.card-title,
+.card-text {
+    color: black;
+}
+
+.badge {
+    margin-left: 5px;
+}
+
+.btn-outline-success {
+    margin-left: 5px;
+}
+
+.img-thumb {
+    width: 50px;
+    height: 50px;
+}
+*/
+
+
+
+
+/* Animaciones */
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.fast {
+    -webkit-animation-duration: 0.4s;
+    animation-duration: 0.4s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.slow {
+    -webkit-animation-duration: 1.4s;
+    animation-duration: 1.4s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    animation-name: fadeIn;
+}
+
+.field.is-grouped.is-centered{
+    justify-content: center!important;
+}
+
+
+a.navbar-item.is-active{
+    color:#00d1b2!important;
+    background-color: #ffffff!important;
+}
+
+a {
+    text-decoration:none;
+}
+
+a:hover{
+    color:#00d1b2;
+}

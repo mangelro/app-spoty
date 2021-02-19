@@ -1,0 +1,30 @@
+<app-loading *ngIf="mostartLoading"></app-loading>
+
+<section class="section">
+  <div class="container">
+    <div class="heading">
+      <h1 class="title has-text-light">Nuevos lanzamientos</h1>
+      <h2 class="subtitle has-text-light">
+        Nuevos lanzamientos aparecidos en España
+      </h2>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container" >
+
+    <article class="message is-danger" *ngIf="error.length>0">
+      <div class="message-body">
+        <h1>Error</h1>
+        {{error}}
+      </div>
+    </article>
+        
+    <div class="columns is-multiline is-tablet">
+      <app-tarjeta ngClass="column is-one-third" [item]="cancion" *ngFor="let cancion of nuevasCanciones" ></app-tarjeta>
+      </div>
+    </div>
+    <!--columns-->
+
+
+</section>

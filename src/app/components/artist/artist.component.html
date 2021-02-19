@@ -1,0 +1,89 @@
+<app-loading *ngIf="mostartLoading"></app-loading>
+
+<section class="section">
+  <div class="container">
+    <div class="heading">
+      <h1 class="title has-text-light">{{artista.name}}</h1>
+      <a [href]="artista.external_urls?.spotify" target="_blank">Página del artista</a>
+    </div>
+  </div>
+</section>
+
+<section class="section animated fadeIn">
+  <div class="columns is-tablet">
+
+    <div class="column is-one-third">
+        <figure class="image is-square">
+          <img [src]="artista.images | noimage" [alt]="artista.name" class="is-rounded" />
+        </figure>
+
+        <div class="field is-grouped is-centered mt-3 ">
+          <div class="control">
+            <div class="tags has-addons">
+              <span class="tag is-light">
+                <span class="icon has-text-danger">
+                  <i class="fas fa-heart"></i>
+                </span>
+              </span>
+              <span class="tag is-primary">{{artista.popularity}}</span>
+            </div>
+          </div>
+          <div class="control">
+            <div class="tags has-addons">
+              <span class="tag is-light">
+                <span class="icon has-text-danger">
+                  <i class="fas fa-thumbs-up"></i>
+                </span>
+              </span>
+              <span class="tag is-primary">{{artista.followers?.total|number}}</span>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="column is-one-third">
+      <div class="tags">
+        <span class="tag is-info is-light" *ngFor="let genero of  artista.genres">{{genero}}</span>
+
+
+
+
+        <button class="button is-danger is-outlined" routerLink="/search">Volver</button>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+<section class="section">
+
+  <div class="container">
+
+<table class="table is-fullwidth has-background-grey-light">
+  <thead>
+    <tr>
+      <th>Foto</th>
+      <th>Album</th>
+      <th>Canción</th>
+      <th>Vista previa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let track of topTracks">
+      <td>
+        <figure class="image is-64x64 ">
+          <img class="is-rounded" [src]="track.album.images| noimage">
+        </figure>
+      </td>
+      <td>{{track.album.name}}</td>
+      <td>{{track.name}}</td>
+      <td><iframe [src]="track.id |safeurl:'https://open.spotify.com/embed/track/'" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></td>
+    </tr>
+ 
+  </tbody>
+</table>
+
+  </div>
+
+</section>

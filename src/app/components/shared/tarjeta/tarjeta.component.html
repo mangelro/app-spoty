@@ -1,0 +1,25 @@
+    <div class="card animated fadeIn slow">
+        <div class="card-image" (click)="VerArtista(item.artists?item.artists[0].id:item.id)">
+            <figure class="image  is-5by4">
+                <img [src]="item.images | noimage" alt="" class="puntero"/>
+            </figure>
+        </div>
+
+        <div class="card-content">
+            <div class="media">
+                <div class="media-content">
+                    <p class="title is-4">{{item.name}}</p>
+                    <p class="subtitle is-6">
+                    </p>
+                </div>
+            </div>
+
+            <div class="content" *ngIf="item.artists">
+                <div class="tags">
+                    <span class="tag is-info is-light puntero" (click)="VerArtista(artista.id)" *ngFor="let artista of  item.artists">{{artista.name}}</span>
+                </div>
+                <br>
+                <span>{{item.release_date | date: 'mediumDate'}}</span>
+            </div>
+        </div>
+    </div>
